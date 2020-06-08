@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+   <head>
+      <meta charset = "ISO-8859-1" />
+      <link href = "css/styles.css" rel = "stylesheet"/>
+      <title>Spring Boot Application</title>
+   </head>
+   <body>
+  <form action="#" th:action="@{/adduser}" th:object="${users}" method="post">
+    <label for="fname">FName</label>
+    <input type="text" th:field="*{fname}" id="fname" placeholder="Name">
+    <span th:if="${#fields.hasErrors('fname')}" th:errors="*{fname}"></span>
+    
+    
+      <label for="lname">LName</label>
+    <input type="text" th:field="*{lname}" id="lname" placeholder="Name">
+    <span th:if="${#fields.hasErrors('lname')}" th:errors="*{lname}"></span>
+    
+    <label for="email">Email</label>
+    <input type="text" th:field="*{email}" id="email" placeholder="Email">
+    <span th:if="${#fields.hasErrors('email')}" th:errors="*{email}"></span>
+    
+    <label for="password">Password</label>
+    <input type="password" th:field="*{password}" id="password" placeholder="password">
+    <span th:if="${#fields.hasErrors('password')}" th:errors="*{password}"></span>
+    <input type="submit" value="Add User">   
+</form>
+   </body>
+</html>
